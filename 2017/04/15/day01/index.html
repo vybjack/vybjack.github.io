@@ -5,14 +5,19 @@
   
 
   
-  <title>Archives | Hexo</title>
+  <title>c自学Day01 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="摘要：c/c++ 自学第一天">
+<meta name="keywords" content="c&#x2F;c++">
+<meta property="og:type" content="article">
+<meta property="og:title" content="c自学Day01">
+<meta property="og:url" content="http://yoursite.com/2017/04/15/day01/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="摘要：c/c++ 自学第一天">
+<meta property="og:updated_time" content="2017-04-19T13:33:15.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="c自学Day01">
+<meta name="twitter:description" content="摘要：c/c++ 自学第一天">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -59,226 +64,71 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/01/21/hello-world/" class="archive-article-date">
-  <time datetime="2018-01-21T00:56:21.000Z" itemprop="datePublished">Jan 21</time>
+        <section id="main"><article id="post-day01" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/04/15/day01/" class="article-date">
+  <time datetime="2017-04-15T08:10:41.000Z" itemprop="datePublished">2017-04-15</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/21/hello-world/">Hello World</a>
+    <h1 class="article-title" itemprop="name">
+      c自学Day01
     </h1>
   
 
-    </header>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>摘要：c/c++ 自学第一天<br><a id="more"></a></p>
+<p>数组做函数参数会退回为一个指针<br>结论：<br>1、把数组的内存地址首地址的有效长度传给被调用函数<br>2、实参和形参的数据类型本质不一样<br>形参的数组，编译器会把其当成指针处理<br>3、形参写在函数上与写在函数内部，只不多是对外的属性而已</p>
+<p>数据类型：固定内存大小的别名<br>函数也是一种数据类型<br>    数组数据类型：<br>        定义一个数组类型<br>        数组指针<br>        数组类型和数组指针类型的关系<br>//b+1 &amp;b+1结果不一样，其所代表的数据类型不一样<br>//b代表的数据首元素的地址<br>//&amp;b代表的是整个数组的地址<br>求数组类型的大小：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">int a;</span><br><span class="line">int b[10];</span><br><span class="line">printf(sizeof(a)) // 4个字节 sizeof是操作符，不是函数</span><br><span class="line">printf(sizeof(b)) //40个字节</span><br></pre></td></tr></table></figure></p>
+<p>void指针：<br>作为左值可以接收任意类型的指针<br>作为右值赋值给其它指针需要强制类型转化<br>不存在void类型的变量</p>
+<p>变量：名称、大小、作用域<br>修改变量：<br>    直接修改：直接赋值<br>    间接修改：通过内存修改<br>对内存空间取别名</p>
+<p>内存区域分析：<br>栈区：由编译器自动分配内存和释放<br>堆区：由程序员分配内存和释放<br>全局区(静态区)：全局变量和静态变量放在一起，初始化的全局变量和初始化的静态变量放在同一块区域，未初始化的全局变量和未初始化的静态变量放在另一块区域，该区域在程序结束后由操作系统释放<br>常量区：常量的存储位置<br>代码区：存放函数体的二进制代码</p>
+<p>指针变量和其所指向的内存空间变量是两个概念</p>
+<p>栈开口向上和开口向下根据变量先后入栈的地址大小来判断，先入栈的变量地址小就是开口向上，反之则开口向下</p>
+<p>不管栈开口向下还是向上，buf的内存地址 buf+1都是开口向上，即栈的生长方向和buf的生长方向不是同一概念</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/04/15/day01/" data-id="cjcowu29t0006f0onn004unn7" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c-c/">c/c++</a></li></ul>
+
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/04/19/泛型相关/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          泛型相关
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/04/15/AS快捷键/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">AS快捷键</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-    
-    
-      
-        </div></section>
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/07/02/Kotlin-third/" class="archive-article-date">
-  <time datetime="2017-07-02T05:25:57.000Z" itemprop="datePublished">Jul 2</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/02/Kotlin-third/">Kotlin_third</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/06/25/Kotlin-two/" class="archive-article-date">
-  <time datetime="2017-06-25T05:25:42.000Z" itemprop="datePublished">Jun 25</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/25/Kotlin-two/">Kotlin_two</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/06/25/ScrollViewListViewClash/" class="archive-article-date">
-  <time datetime="2017-06-25T05:10:38.000Z" itemprop="datePublished">Jun 25</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/25/ScrollViewListViewClash/">ScrollViewListViewClash</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/06/11/kotlin_one/" class="archive-article-date">
-  <time datetime="2017-06-10T16:00:00.000Z" itemprop="datePublished">Jun 11</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/11/kotlin_one/">kotlin one</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/05/07/day03/" class="archive-article-date">
-  <time datetime="2017-05-06T16:00:00.000Z" itemprop="datePublished">May 7</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/07/day03/">c自学Day03</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/04/22/day02/" class="archive-article-date">
-  <time datetime="2017-04-21T16:00:00.000Z" itemprop="datePublished">Apr 22</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/22/day02/">c自学Day02</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/04/19/泛型相关/" class="archive-article-date">
-  <time datetime="2017-04-19T13:29:23.000Z" itemprop="datePublished">Apr 19</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/19/泛型相关/">泛型相关</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/04/15/day01/" class="archive-article-date">
-  <time datetime="2017-04-15T08:10:41.000Z" itemprop="datePublished">Apr 15</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/15/day01/">c自学Day01</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/04/15/AS快捷键/" class="archive-article-date">
-  <time datetime="2017-04-15T06:21:03.000Z" itemprop="datePublished">Apr 15</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/15/AS快捷键/">AS快捷键</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-
-  <nav id="page-nav">
-    
-    <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/">Suivant &raquo;</a>
-  </nav>
 
 </section>
         

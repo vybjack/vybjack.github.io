@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>泛型相关 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="摘要： 认识泛型相关内容">
+<meta name="keywords" content="泛型,Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="泛型相关">
+<meta property="og:url" content="http://yoursite.com/2017/04/19/泛型相关/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="摘要： 认识泛型相关内容">
+<meta property="og:updated_time" content="2017-04-19T13:29:23.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="泛型相关">
+<meta name="twitter:description" content="摘要： 认识泛型相关内容">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-泛型相关" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/04/19/泛型相关/" class="article-date">
+  <time datetime="2017-04-19T13:29:23.000Z" itemprop="datePublished">2017-04-19</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      泛型相关
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>摘要： 认识泛型相关内容</p>
+<a id="more"></a>
+<h4 id="为什么使用泛型编程"><a href="#为什么使用泛型编程" class="headerlink" title="为什么使用泛型编程?"></a>为什么使用泛型编程?</h4><p>在集合中，存储数据时如果没有指定数据类型，可以存储任意类型的数据，但是在获取的时候，如果不做类型检查就没办法对数据进行处理。所有使用泛型：</p>
+<ul>
+<li>获取数据时避免类型检查，提高程序的效率</li>
+<li>提高程序的健壮性和安全性</li>
+<li>在使用时才指定具体的数据类型，提高灵活性</li>
+</ul>
+<h4 id="定义泛型"><a href="#定义泛型" class="headerlink" title="定义泛型"></a>定义泛型</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public class Person&lt;T&gt;&#123;</span><br><span class="line">	private T t;</span><br><span class="line">	public void setT(T t)&#123;</span><br><span class="line">		this.t = t;</span><br><span class="line">	&#125;</span><br><span class="line">	public T getT(T t)&#123;</span><br><span class="line">		return t;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Person 类引入了一个类型参数 T (Java5 引入的)，类型参数就是用 &lt;&gt; 放在类名后面来表示的，同时可以定义多个类型参数，格式为 &lt; T,K,V &gt;。类型参数可以用来定义方法的返回类型、参数类型、定义域或者局部变量。如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public class Person&lt;T,K,V&gt;&#123;...&#125;//定义类的参数类型</span><br><span class="line">private T t;//定义变量或定义域</span><br><span class="line">public void setT(T t)&#123;this.t = t&#125;;//定义方法的参数类型</span><br><span class="line">public T getT()&#123;return t;&#125;//定义方法的返回类型</span><br></pre></td></tr></table></figure></p>
+<h4 id="泛型的类型通配符"><a href="#泛型的类型通配符" class="headerlink" title="泛型的类型通配符"></a>泛型的类型通配符</h4><p> &lt; T extends Person&gt; 表示 T 类型是 Person 类型或其子类</p>
+<p>如果需要给 T 限定多个类型，则需要使用符号 “&amp;” 如： &lt; T extends Runnable &amp; Serializable&gt;</p>
+<p>注意：不管后面的参数类型是接口还是类，都是用 extends 关键字。如果存在类 Class 类型，则至多有一个(Java 的单继承原则)，而且必须放在第一个。</p>
+<h4 id="限定类型关键字"><a href="#限定类型关键字" class="headerlink" title="限定类型关键字"></a>限定类型关键字</h4><ul>
+<li>extends 用来限定子类型 如 Person&lt; T extends Male&gt;</li>
+<li>super 用来限定超类型 如 Person&lt; T super Animal&gt;<br>注意： super 不能用于限定多个类型参数。 如：&lt; T super File &amp; Runnable&gt; //错误</li>
+</ul>
+<h4 id="通配符类型"><a href="#通配符类型" class="headerlink" title="通配符类型"></a>通配符类型</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Person&lt; ? extends Male&gt; //表示 Person 泛型类型是Male或者其子类，通配符用 &quot;?&quot; 表示</span><br></pre></td></tr></table></figure>
+<h4 id="无限定通配符"><a href="#无限定通配符" class="headerlink" title="无限定通配符"></a>无限定通配符</h4><p>无限定通配符去除了超类型和子类型的规则，仅仅用一个 “?” 表示，且只能用户类型参数中。如 Person&lt;?&gt;</p>
+<h4 id="捕获泛型的类型参数"><a href="#捕获泛型的类型参数" class="headerlink" title="捕获泛型的类型参数"></a>捕获泛型的类型参数</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Person&lt;? extends Male&gt; person: getT() 返回 Male 类型，可捕获到</span><br><span class="line">Person&lt;? super Animal&gt; person：getT() 返回 Object 类型， 无法捕获</span><br><span class="line">Person&lt;?&gt; person： getT() 返回 Object 类型， 无法捕获到</span><br></pre></td></tr></table></figure>
+<h4 id="泛型类型的擦除"><a href="#泛型类型的擦除" class="headerlink" title="泛型类型的擦除"></a>泛型类型的擦除</h4><p>虚拟机机制：泛型参数在编译过程中会被擦除，并将其替换成特定类型，若没有指定类型，用 Object 代替，如 Person<t> 类，擦除后为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public class Person&#123;</span><br><span class="line">	private Object t;</span><br><span class="line">	public void setT(Object t)&#123;this.t = t&#125;</span><br><span class="line">	public Object getT()&#123;return t;&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></t></p>
+<h4 id="具有类型限定的泛型擦除"><a href="#具有类型限定的泛型擦除" class="headerlink" title="具有类型限定的泛型擦除"></a>具有类型限定的泛型擦除</h4><p>如果有多个类型参数作限定，泛型擦除时默认用第一个代替，所有为免除必要的强制类型转换，提高效率，将标签接口(没有任何方法的接口)放在后面，防止被编译器用来替代泛型参数</p>
+<h4 id="泛型擦除带来的问题"><a href="#泛型擦除带来的问题" class="headerlink" title="泛型擦除带来的问题"></a>泛型擦除带来的问题</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">public class Person&lt; T extends Animal &gt;&#123;</span><br><span class="line">	private T t;</span><br><span class="line">	public void setT(T t)&#123;</span><br><span class="line">		this.t = t;</span><br><span class="line">	&#125;</span><br><span class="line">	public T getT(</span><br><span class="line">		return t;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public class Male extends Person&lt;Dog&gt;&#123;</span><br><span class="line">	public void setT(Dog d)&#123;</span><br><span class="line">		super.setT(d);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Person 类泛型擦除后，方法变为 public void setT(Object t){…}<br>而Male 类中方法还是 public void setT(Dog d){…}<br>所以 Male 从 Person 中继承了 Public void setT(Object t){…} 而自身有存在 public void setT(Dog d){…} 方法，那么，问题来了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Person&lt;Dog&gt; person = new Male();</span><br><span class="line">person.setT(new Dog());</span><br></pre></td></tr></table></figure></p>
+<p>这里 person 引用指向了 Male 实例，根据多态性，setT() 方法应该调用 Male 对象中的方法 setT(Dog d),可是这个擦除让 Person 中的 setT(Object t) 被调用，这就导致了擦除与多态的冲突。此时，虚拟机会在 Male 类中生成一个桥方法(bridge mehtod)。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public void setT(Object t)&#123;</span><br><span class="line">	setT((Dog)t);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>有了这个桥方法，所以就先调用 setT(Object t) –&gt; setT(Dog d)。<br>另外，如果在 Male 中增加一个方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@override</span><br><span class="line">public Dog getT()&#123;</span><br><span class="line">	return super.getT();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>而本来 Male 类是继承于 Person 类，即已有了一个<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public Object getT()&#123;...&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这两个方法在 Java 中是不能同时存在的。Java5 以后增加了一个协变类型，这个规则就被允许了。因为关键字 @override ，说明覆盖了父类的方法，而返回值可以指定为父类中的返回值类型的子类，这就是协变类型。即 Java5 后允许子类覆盖父类方法后指定一个更严格的类型(子类型)</p>
+<h4 id="泛型的约束和局限性"><a href="#泛型的约束和局限性" class="headerlink" title="泛型的约束和局限性"></a>泛型的约束和局限性</h4><ul>
+<li>不能用基本类型实例化类型参数，如 List<int>// 错误语法</int></li>
+<li><p>不能实例化类型参数，需要创建 T 对象，必须使用 Java 反射来创建对象，T 的 Class 对象也是不被支持的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public &lt;T&gt; Person&lt;T&gt; createInstance(Class&lt;T&gt; clazz)&#123;</span><br><span class="line">	try&#123;</span><br><span class="line">		return new Person&lt;T&gt;(clazz.newInstance());</span><br><span class="line">	&#125; catch (Exception e)&#123;</span><br><span class="line">		return null;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>不能声明参数化的数组</p>
+</li>
+<li>不能进行类型查询，即不能通过 instanceof 来判断是否属于哪一类型</li>
+<li>不能抛出和捕获泛型类实例</li>
+</ul>
+<h4 id="泛型擦除后引起冲突"><a href="#泛型擦除后引起冲突" class="headerlink" title="泛型擦除后引起冲突"></a>泛型擦除后引起冲突</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public class Person&lt;T&gt;&#123;</span><br><span class="line">	public boolean equals(T value)&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面 Person 类包含两个 equals(Object o) 方法，一个继承于 Object ，一个来自于自身泛型擦除，这样就无法通过编译，必须修改方法名<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">interface MoveObject&lt;T&gt;&#123;</span><br><span class="line">	void eat(T t);</span><br><span class="line">&#125;</span><br><span class="line">public class Male implements MoveObject&lt;Male&gt;&#123;</span><br><span class="line">	public void eat(Male t)&#123;...&#125;</span><br><span class="line">&#125;</span><br><span class="line">public class LittleMale extends Male implements MoveObject&lt;LittleMale&gt;&#123;</span><br><span class="line">	public void eat(Male t);</span><br><span class="line">	public void eat(LittleMale t)&#123;..&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>上面 LittleMale 类继承 Male 具有eat(Object t) 方法，另外实现了 MoveObject 接口，有具有 eat(Male t) 和 eat(LittleMale t) 两个方法，根据桥方法，会生成 两个 eat(Object t) 方法，这也是不允许的</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/04/19/泛型相关/" data-id="cjcowu2ae000nf0onu9m27eu2" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/泛型/">泛型</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/04/22/day02/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          c自学Day02
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/04/15/day01/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">c自学Day01</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Catégories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Mot-clés</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AS快捷键/">AS快捷键</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kotlin/">Kotlin</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c-c/">c/c++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/免费博客-hexo/">免费博客 hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/泛型/">泛型</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/AS快捷键/" style="font-size: 10px;">AS快捷键</a> <a href="/tags/Android/" style="font-size: 15px;">Android</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Kotlin/" style="font-size: 10px;">Kotlin</a> <a href="/tags/c-c/" style="font-size: 20px;">c/c++</a> <a href="/tags/免费博客-hexo/" style="font-size: 10px;">免费博客 hexo</a> <a href="/tags/泛型/" style="font-size: 10px;">泛型</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/01/21/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/02/Kotlin-third/">Kotlin_third</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/25/Kotlin-two/">Kotlin_two</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/25/ScrollViewListViewClash/">ScrollViewListViewClash</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/11/kotlin_one/">kotlin one</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Propulsé par <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

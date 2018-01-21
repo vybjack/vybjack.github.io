@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>搭建博客 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="摘要：基于 hexo 和 github 搭建个人免费博客">
+<meta name="keywords" content="免费博客 hexo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="搭建博客">
+<meta property="og:url" content="http://yoursite.com/2017/04/09/搭建博客/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="摘要：基于 hexo 和 github 搭建个人免费博客">
+<meta property="og:updated_time" content="2017-04-09T09:50:44.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="搭建博客">
+<meta name="twitter:description" content="摘要：基于 hexo 和 github 搭建个人免费博客">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-搭建博客" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/04/09/搭建博客/" class="article-date">
+  <time datetime="2017-04-09T07:36:02.000Z" itemprop="datePublished">2017-04-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      搭建博客
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>摘要：基于 hexo 和 github 搭建个人免费博客</p>
+<a id="more"></a>
+<h4 id="关于博客"><a href="#关于博客" class="headerlink" title="关于博客"></a>关于博客</h4><p>今天花了几个小时搭建了自己的个人博客，就想着把怎样搭建博客的过程记录下来，以便以后查阅。本次搭建以mac系统为例。</p>
+<h4 id="准备工具"><a href="#准备工具" class="headerlink" title="准备工具"></a>准备工具</h4><p>· <a href="https://git-scm.com/download/mac" target="_blank" rel="noopener">Git</a><br>· <a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">Node.js</a><br>需要安装上述两个工具，打开官网下载、安装即可</p>
+<h4 id="终端安装-hexo"><a href="#终端安装-hexo" class="headerlink" title="终端安装 hexo"></a>终端安装 hexo</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">command</span> + 空格 打开 Spotlight</span><br><span class="line">输入 ter + 回车 打开终端</span><br><span class="line">终端输入 npm install -g hexo-cli 来完成 hexo 安装</span><br></pre></td></tr></table></figure>
+<h4 id="终端创建本地博客文件内容"><a href="#终端创建本地博客文件内容" class="headerlink" title="终端创建本地博客文件内容"></a>终端创建本地博客文件内容</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">任意路径下新建文件夹，并命名为myblog(文件名任意)，<span class="built_in">cd</span> 到此文件夹下</span><br><span class="line">终端输入 hexo init blog (blog为文件名，可任意)完成初始化</span><br><span class="line">终端输入 hexo generate (或 hexo g) 来生产静态文件</span><br><span class="line">终端输入 hexo server (或 hexo s) 来启动本地hexo 服务器</span><br></pre></td></tr></table></figure>
+<h4 id="预览本地博客地址"><a href="#预览本地博客地址" class="headerlink" title="预览本地博客地址"></a>预览本地博客地址</h4><p>如果搭建顺利，浏览器打开<a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> 即为本地的博客首页，到这里我们的博客算是搭建好了，不过只是本地的。所以，接下来我们要提交到网络，这里我们利用github</p>
+<h4 id="关联-github"><a href="#关联-github" class="headerlink" title="关联 github"></a>关联 <a href="https://github.com" target="_blank" rel="noopener">github</a></h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">打开 github 官网注册帐号，并注意昵称。</span><br><span class="line">创建新的网络博客repository，即博客仓库，并命名：注册的昵称.github.io , 必须以此格式命名，这是约定，例：vybjack.github.io.</span><br><span class="line">打开之前新建的blog文件夹，找到_config.yml文件，打开并拉到最下面，修改 deploy 配置并保存</span><br><span class="line">deploy:</span><br><span class="line">     <span class="built_in">type</span>: git</span><br><span class="line">     repository: https://github.com/nickname/nickname.github.io.git</span><br><span class="line">     branch: master</span><br></pre></td></tr></table></figure>
+<p>注意：每个属性冒号后面都必须带有空格，其中repository的值中nickname改成需要关联的 github 的帐号昵称</p>
+<h4 id="终端安装-hexo-deployer-git"><a href="#终端安装-hexo-deployer-git" class="headerlink" title="终端安装 hexo-deployer-git"></a>终端安装 hexo-deployer-git</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">终端输入 npm install hexo-deployer-git --save 来完成安装</span><br></pre></td></tr></table></figure>
+<h4 id="终端将本地博客内容提交到-github"><a href="#终端将本地博客内容提交到-github" class="headerlink" title="终端将本地博客内容提交到 github"></a>终端将本地博客内容提交到 github</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">终端输入 hexo deploy (或 hexo d) 来完成提交</span><br></pre></td></tr></table></figure>
+<p>hexo 一次部署： hexo clean –&gt; hexo generate –&gt; hexo deploy</p>
+<h4 id="博客搭建完成"><a href="#博客搭建完成" class="headerlink" title="博客搭建完成"></a>博客搭建完成</h4><p>如果顺利，浏览器打开 <a href="https://nickname.github.io" target="_blank" rel="noopener">https://nickname.github.io</a> (nickname为关联的 github 的昵称) 即为搭建好的博客，到此博客搭建完成</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/04/09/搭建博客/" data-id="cjcowu2ab000kf0onfqmjysak" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/免费博客-hexo/">免费博客 hexo</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/04/09/home/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          This is the start
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Catégories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Mot-clés</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AS快捷键/">AS快捷键</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kotlin/">Kotlin</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c-c/">c/c++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/免费博客-hexo/">免费博客 hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/泛型/">泛型</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/AS快捷键/" style="font-size: 10px;">AS快捷键</a> <a href="/tags/Android/" style="font-size: 15px;">Android</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Kotlin/" style="font-size: 10px;">Kotlin</a> <a href="/tags/c-c/" style="font-size: 20px;">c/c++</a> <a href="/tags/免费博客-hexo/" style="font-size: 10px;">免费博客 hexo</a> <a href="/tags/泛型/" style="font-size: 10px;">泛型</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/01/21/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/02/Kotlin-third/">Kotlin_third</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/25/Kotlin-two/">Kotlin_two</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/25/ScrollViewListViewClash/">ScrollViewListViewClash</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/11/kotlin_one/">kotlin one</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Propulsé par <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

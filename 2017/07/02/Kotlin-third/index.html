@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Kotlin_third | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="摘要：Koltin 学习">
+<meta name="keywords" content="Kotlin,Android">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Kotlin_third">
+<meta property="og:url" content="http://yoursite.com/2017/07/02/Kotlin-third/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="摘要：Koltin 学习">
+<meta property="og:updated_time" content="2017-07-02T07:29:47.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Kotlin_third">
+<meta name="twitter:description" content="摘要：Koltin 学习">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Kotlin-third" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/02/Kotlin-third/" class="article-date">
+  <time datetime="2017-07-02T05:25:57.000Z" itemprop="datePublished">2017-07-02</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Kotlin_third
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>摘要：Koltin 学习</p>
+<a id="more"></a>
+<h4 id="属性和字段"><a href="#属性和字段" class="headerlink" title="属性和字段"></a>属性和字段</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line">类拥有自身的属性，可以声明为可变的或不可变的</span><br><span class="line">class Address&#123;</span><br><span class="line">	var name: String = ...</span><br><span class="line">	var state: String? = ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">使用变量</span><br><span class="line">fun copy Address(address: Address) : Address&#123;</span><br><span class="line">	val result = Address()</span><br><span class="line">	result.name = adress.name</span><br><span class="line">	result.state = address.state</span><br><span class="line">	return result</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">完整的变量的定义</span><br><span class="line">字符串变量：</span><br><span class="line">var str: String</span><br><span class="line">		get() = this.toString()</span><br><span class="line">		set(value)&#123;</span><br><span class="line">				...</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">val isEmpty get() = this.size == 0</span><br><span class="line"></span><br><span class="line">如果想要改变变量的使用范围或增加注解，但又不改变它的默认实现，则需要定义 set 和 get 但不进行实现</span><br><span class="line">var string: String = &quot;abc&quot;</span><br><span class="line">		private set//</span><br><span class="line">var anno: Any? = null</span><br><span class="line">		@Inject set//</span><br><span class="line"></span><br><span class="line">支持反向域</span><br><span class="line">var name：String = &quot;ab&quot;</span><br><span class="line">		get() = field.toUpperCase()</span><br><span class="line">		set(value)&#123;</span><br><span class="line">			field = value</span><br><span class="line">		&#125;</span><br><span class="line">field 是一个自动的返回字段，代表的就是该属性</span><br><span class="line">如果 field 不被支持可以直接返回属性</span><br><span class="line">private var _table: Map&lt;String,Int&gt;? = null</span><br><span class="line"></span><br><span class="line">public val table: Map&lt;String,Int&gt;</span><br><span class="line">		get()&#123;</span><br><span class="line">			if(_table == null)&#123;</span><br><span class="line">				_table = HashMap()</span><br><span class="line">			&#125;</span><br><span class="line">			return _table?: throw AssertionError(&quot;set to null by another thread&quot;)</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">延迟初始化关键字 lateinit, 不能修饰空类型变量，只能用 var 修饰</span><br><span class="line">public class MyTest&#123;</span><br><span class="line">		lateinit var subject: TestSubject</span><br><span class="line"></span><br><span class="line">		@SetUp fun setUp()&#123;</span><br><span class="line">				subject = TestSubject()</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		@Test fun test()&#123;</span><br><span class="line">				subject.method()</span><br><span class="line">		&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">interface MyInterface&#123;</span><br><span class="line">		fun bar()</span><br><span class="line">		fun foo()&#123;</span><br><span class="line">			//... 可以定义方法体</span><br><span class="line">		&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">实现方法</span><br><span class="line">class Child : MyInterface&#123;</span><br><span class="line">		override fun bar()&#123;</span><br><span class="line">			// bofy</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		override fun foo()&#123;</span><br><span class="line">			// bofy</span><br><span class="line">		&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">接口中属性：必须抽象化或者提供访问实现</span><br><span class="line">interface MyInterface &#123;</span><br><span class="line">		var prop: Int //抽象</span><br><span class="line">		val properWithImpl: String </span><br><span class="line">			get() = &quot;foo&quot;</span><br><span class="line"></span><br><span class="line">		fun foo()&#123;</span><br><span class="line">				print(prop)</span><br><span class="line">		&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class child : MyInterface &#123;</span><br><span class="line">		override val prop: Int = 29</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">不同接口的同名方法的覆盖冲突，需要指定方法属于谁</span><br><span class="line">interface A&#123;</span><br><span class="line">		fun foo()&#123; print(&quot;A&quot;)&#125;</span><br><span class="line">		fun bar()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">interface B&#123;</span><br><span class="line">		fun foo()&#123;print(&quot;B&quot;)&#125;</span><br><span class="line">		fun bar()&#123;print(&quot;bar&quot;)&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class C : A&#123;</span><br><span class="line">		override fun bar()&#123; print(&quot;bar&quot;) &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class D : A,B&#123;</span><br><span class="line">		override fun foo()&#123;</span><br><span class="line">			super&lt;A&gt;.foo()&#123;&#125;</span><br><span class="line">			super&lt;B&gt;,foo()&#123;&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		override fun bar()&#123;</span><br><span class="line">			super&lt;B&gt;.bar()&#123;&#125;</span><br><span class="line">		&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">private / protected / public(默认) / internal(同 module 中可以访问)</span><br></pre></td></tr></table></figure>
+<h4 id="数据实体类"><a href="#数据实体类" class="headerlink" title="数据实体类"></a>数据实体类</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">数据实体类需要加 data 关键字来修饰</span><br><span class="line">data class User(val name: String = &quot;&quot;, val age: Int =1)&#123;</span><br><span class="line">		fun copy(name: String = this.name, age: Int = this.age ) = User(name,age)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">val jack = User(name = &quot;Jack&quot;, age = 1)</span><br><span class="line">val olderJack = jack.copy(age = 2)</span><br><span class="line"></span><br><span class="line">解构</span><br><span class="line">val jane = User(&quot;Jane&quot;,20)</span><br><span class="line">val (name,age) = jane</span><br></pre></td></tr></table></figure>
+<h4 id="未知类-Sealed-Classes-，类似枚举"><a href="#未知类-Sealed-Classes-，类似枚举" class="headerlink" title="未知类 (Sealed Classes)，类似枚举"></a>未知类 (Sealed Classes)，类似枚举</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">sealed class Operation&#123;</span><br><span class="line">		class Add(val value: Int) : Opertion()</span><br><span class="line">		class Substract(val value: Int) : Opertion()</span><br><span class="line">		class Multiply(val value: Int) : Opertion()</span><br><span class="line">		class Divide(val value: Int) : Opertion()</span><br><span class="line">&#125;</span><br><span class="line">使用：</span><br><span class="line">fun execute(x: Int, op: Opertion) = when(op)&#123;</span><br><span class="line">		is Opertion.Add -&gt; x + op.value</span><br><span class="line">		is Opertion.Substract -&gt; x - op.value</span><br><span class="line">		is Opertion.Multiply -&gt; x * op.value</span><br><span class="line">		is Opertion.Divide -&gt; x / op.value</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">位置变异</span><br><span class="line">通过将参数 T 注解成只能作为返回值而不是作为传入参数，使用 out 关键字标识</span><br><span class="line">abstract class Source&lt;out T&gt;&#123;</span><br><span class="line">	abstract fun nextT(): T // 作为返回值</span><br><span class="line">	// abstract fun add(alue: T)//编译错误，不能作为传入参数</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/07/02/Kotlin-third/" data-id="cjcowu29a0001f0one40ted76" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Kotlin/">Kotlin</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/01/21/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          Hello World
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/06/25/Kotlin-two/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">Kotlin_two</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Catégories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Mot-clés</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AS快捷键/">AS快捷键</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kotlin/">Kotlin</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c-c/">c/c++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/免费博客-hexo/">免费博客 hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/泛型/">泛型</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/AS快捷键/" style="font-size: 10px;">AS快捷键</a> <a href="/tags/Android/" style="font-size: 15px;">Android</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Kotlin/" style="font-size: 10px;">Kotlin</a> <a href="/tags/c-c/" style="font-size: 20px;">c/c++</a> <a href="/tags/免费博客-hexo/" style="font-size: 10px;">免费博客 hexo</a> <a href="/tags/泛型/" style="font-size: 10px;">泛型</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/01/21/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/02/Kotlin-third/">Kotlin_third</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/25/Kotlin-two/">Kotlin_two</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/25/ScrollViewListViewClash/">ScrollViewListViewClash</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/11/kotlin_one/">kotlin one</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Propulsé par <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

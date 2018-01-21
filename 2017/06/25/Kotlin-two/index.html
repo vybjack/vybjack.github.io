@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Kotlin_two | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="摘要：Kotlin 学习">
+<meta name="keywords" content="Android">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Kotlin_two">
+<meta property="og:url" content="http://yoursite.com/2017/06/25/Kotlin-two/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="摘要：Kotlin 学习">
+<meta property="og:updated_time" content="2017-06-25T07:59:36.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Kotlin_two">
+<meta name="twitter:description" content="摘要：Kotlin 学习">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Kotlin-two" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/25/Kotlin-two/" class="article-date">
+  <time datetime="2017-06-25T05:25:42.000Z" itemprop="datePublished">2017-06-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Kotlin_two
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>摘要：Kotlin 学习<br><a id="more"></a></p>
+<h4 id="循环体添加标签"><a href="#循环体添加标签" class="headerlink" title="循环体添加标签"></a>循环体添加标签</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">loop@ for ( i  in  1..100 )&#123;</span><br><span class="line">  //...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">也可以以标签来做操作 break/continue </span><br><span class="line">loop@ for ( i   in   1..100 )&#123;</span><br><span class="line">	for ( i  in 1..100 )&#123;</span><br><span class="line">		if( true ) break@loop</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">可以通过标签返回一个内联函数</span><br><span class="line">fun foo() &#123;</span><br><span class="line">	ints.forEach lit@ &#123;</span><br><span class="line">		if (it == 0) return@lit</span><br><span class="line">		print(it)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fun foo()&#123;</span><br><span class="line">	ints.forEach &#123;</span><br><span class="line">		if(it == 0) return@forEach</span><br><span class="line">		print(it)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">返回一个常量值</span><br><span class="line">return@a 1</span><br></pre></td></tr></table></figure>
+<h4 id="类与继承"><a href="#类与继承" class="headerlink" title="类与继承"></a>类与继承</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">class className&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">一个类由类型、类的头部(包含类型参数，默认构造方法)和类主体组成</span><br></pre></td></tr></table></figure>
+<h4 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h4><h5 id="默认构造方法-第一构造方法"><a href="#默认构造方法-第一构造方法" class="headerlink" title="默认构造方法(第一构造方法)"></a>默认构造方法(第一构造方法)</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">class Person constructor(firstName: String)&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">如果默认构造方法没有注释或可见性修饰符，则 constructor  关键字可以省略</span><br><span class="line">class Customer(name: String)&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">默认构造方法里不能包含任何代码。但是构造方法传入的参数可以通过 init 代码块来进行初始化</span><br><span class="line">class Customer(name : String)&#123;</span><br><span class="line">	init&#123;</span><br><span class="line">		println(&quot;init with $&#123;name&#125;&quot;)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">默认构造方法的参数还可以在类主体中使用</span><br><span class="line">class Customer(name: String)&#123;</span><br><span class="line">	val key = name.toUpperCase()</span><br><span class="line">&#125;</span><br><span class="line">构造方法同时可以传入多个不同类型的参数,这些参数可以是可变变量也可以是只读变量</span><br><span class="line">class Person(val firstName: String, val lastName: String. var age:Int)&#123;</span><br><span class="line">//...</span><br><span class="line">&#125;</span><br><span class="line">如果默认构造函数有注释或可见性修饰符，constructor 关键字必须保留，而且修饰符必须在其前面，修饰符默认是 public ，当出现一些内部类使用场景时可能出现 private 修饰符</span><br><span class="line">class Customer public @Inject constructor(name: String)&#123;...&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="第二构造方法"><a href="#第二构造方法" class="headerlink" title="第二构造方法"></a>第二构造方法</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">class Person&#123;</span><br><span class="line">	constructor(parent: Person)&#123;</span><br><span class="line">		parent.children.add(this)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">当类存在第一构造方法，第二构造方法需要调用第一构造方法，通过 this 关键字来调用</span><br><span class="line">class Person(val name；String)&#123;</span><br><span class="line">	constructor(name：String, parent: Person) : this(name)&#123;</span><br><span class="line">		parent.children.add(this)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">如果类没有声明构造函数，则默认会有拥有一个无参数的构造函数</span><br><span class="line">class Person public constructor()&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">如果需要将其私有化，则必须声明为 private</span><br></pre></td></tr></table></figure>
+<h4 id="类的实例化-并没有关键字-new"><a href="#类的实例化-并没有关键字-new" class="headerlink" title="类的实例化 ,并没有关键字 new"></a>类的实例化 ,并没有关键字 new</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">val person = Person()</span><br><span class="line">val customer = Customer(&quot;Jack&quot;)</span><br></pre></td></tr></table></figure>
+<h4 id="类的成员"><a href="#类的成员" class="headerlink" title="类的成员"></a>类的成员</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">类成员主要包括</span><br><span class="line">--构造方法和初始化代码块</span><br><span class="line">--函数</span><br><span class="line">--原型</span><br><span class="line">--内部类</span><br><span class="line">--对象声明</span><br></pre></td></tr></table></figure>
+<h4 id="类的继承"><a href="#类的继承" class="headerlink" title="类的继承"></a>类的继承</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">只有被 open 修饰的类才可以被继承，如果类没有声明修饰符，则默认为 final 修饰，则不能被继承</span><br><span class="line">类的继承，将父类放在子类的后面，用冒号隔开</span><br><span class="line">open class Base(p: Int)</span><br><span class="line">class Derived(p: Int) : Base(p)</span><br><span class="line">如果类具有第一构造函数参数，则父类必须用子类的构造函数参数来进行初始化；如果类没有主动声明第一构造方法，则第二构造方法必须用 super 关键字来初始化父类，注意不同的构造方法调用不同的父类方法</span><br><span class="line">class MyView : View&#123;</span><br><span class="line">	constructor(ctx: Context) : super(ctx)</span><br><span class="line"></span><br><span class="line">	constructor(ctx: Context, attrs: AttributeSet) : super(ctx,attrs)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="类的方法的继承"><a href="#类的方法的继承" class="headerlink" title="类的方法的继承"></a>类的方法的继承</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">open class Base&#123;</span><br><span class="line">	open fun v()[]</span><br><span class="line">&#125;</span><br><span class="line">class Derivedd : Base&#123;</span><br><span class="line">	override fun v()[]</span><br><span class="line">&#125;</span><br><span class="line">如果不想方法被继承，则使用 final 关键字</span><br><span class="line">class AnotherDerived : Base&#123;</span><br><span class="line">	final override fun v()&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="类的成员变量的继承"><a href="#类的成员变量的继承" class="headerlink" title="类的成员变量的继承"></a>类的成员变量的继承</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">可以用可变变量（var）和不可变变量（val）继承不可变变量（val），但不能用不可变变量（val）继承可变变量(var)</span><br><span class="line">open class Foo&#123;</span><br><span class="line">	open val x: Int get&#123;...&#125;</span><br><span class="line">&#125;</span><br><span class="line">class Foo1 : Foo&#123;</span><br><span class="line">	override val x: Int = 4</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Foo2 : Foo&#123;</span><br><span class="line">	override var x: Int = 9</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="继承不同类中相同方法"><a href="#继承不同类中相同方法" class="headerlink" title="继承不同类中相同方法"></a>继承不同类中相同方法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">open calss A&#123;</span><br><span class="line">	open fun f()&#123; print(&quot;A&quot;)&#125;</span><br><span class="line">	fun a()&#123;print(&quot;a&quot;)&#125;</span><br><span class="line">&#125;</span><br><span class="line">interface B&#123;//接口和其方法都默认是 open 的</span><br><span class="line">	fun f()&#123;print(&quot;B&quot;)&#125;</span><br><span class="line">	fun b()&#123;print(&quot;b&quot;)&#125;</span><br><span class="line">&#125;</span><br><span class="line">class C : A, B&#123;</span><br><span class="line">	override fun f()&#123;</span><br><span class="line">		super&lt;A&gt;.f()</span><br><span class="line">		super&lt;B&gt;.f()</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">open class Base&#123;</span><br><span class="line">	open fun f()&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line">abstract class Derived : Base&#123;</span><br><span class="line">	override abstract fun f()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/06/25/Kotlin-two/" data-id="cjcowu29j0004f0on9htsa137" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/07/02/Kotlin-third/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          Kotlin_third
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/06/25/ScrollViewListViewClash/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">ScrollViewListViewClash</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Catégories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Mot-clés</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AS快捷键/">AS快捷键</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kotlin/">Kotlin</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c-c/">c/c++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/免费博客-hexo/">免费博客 hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/泛型/">泛型</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/AS快捷键/" style="font-size: 10px;">AS快捷键</a> <a href="/tags/Android/" style="font-size: 15px;">Android</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Kotlin/" style="font-size: 10px;">Kotlin</a> <a href="/tags/c-c/" style="font-size: 20px;">c/c++</a> <a href="/tags/免费博客-hexo/" style="font-size: 10px;">免费博客 hexo</a> <a href="/tags/泛型/" style="font-size: 10px;">泛型</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/01/21/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/02/Kotlin-third/">Kotlin_third</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/25/Kotlin-two/">Kotlin_two</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/25/ScrollViewListViewClash/">ScrollViewListViewClash</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/11/kotlin_one/">kotlin one</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Propulsé par <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

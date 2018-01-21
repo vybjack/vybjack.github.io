@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>c自学Day02 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="摘要：c/c++ 自学第二天">
+<meta name="keywords" content="c&#x2F;c++">
+<meta property="og:type" content="article">
+<meta property="og:title" content="c自学Day02">
+<meta property="og:url" content="http://yoursite.com/2017/04/22/day02/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="摘要：c/c++ 自学第二天">
+<meta property="og:updated_time" content="2017-04-22T13:10:26.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="c自学Day02">
+<meta name="twitter:description" content="摘要：c/c++ 自学第二天">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-day02" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/04/22/day02/" class="article-date">
+  <time datetime="2017-04-21T16:00:00.000Z" itemprop="datePublished">2017-04-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      c自学Day02
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>摘要：c/c++ 自学第二天<br><a id="more"></a></p>
+<h4 id="野指针"><a href="#野指针" class="headerlink" title="野指针"></a>野指针</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">char *p1 = NULL;</span><br><span class="line">p1 = (char *)malloc(100);</span><br><span class="line">if(p1 == NULL)&#123;</span><br><span class="line">	return;</span><br><span class="line">&#125;</span><br><span class="line">if(p1 != NULL)&#123;</span><br><span class="line">	free(p1);</span><br><span class="line">	p1 == NULL;//如果不作次操作，p1 将成为野指针</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>野指针产生原因：</p>
+<ul>
+<li>指针变量和它所指向的内存空间是两个不同概念</li>
+<li>释放了指针所指的内容空间，但是指针变量本身没有重置为 null<br>避免方法</li>
+<li>定义指针的时候，初始化为 null</li>
+<li>释放指针变量所指的内存空间后，把指针重置为 null</li>
+</ul>
+<h4 id="指针的间接赋值"><a href="#指针的间接赋值" class="headerlink" title="指针的间接赋值"></a>指针的间接赋值</h4><p>一级指针<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">int a = 10;</span><br><span class="line">int *p = NULL;</span><br><span class="line">a = 20;</span><br><span class="line">p = &amp;a;</span><br><span class="line">*p = 30;//p 的值是 a 的地址，通过内存地址找到内存空间，间接修改了 a 的值</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">int getFileLen(int *p)&#123;</span><br><span class="line">	*p = 40;// p 的值是 a 的地址 *a 的地址间接修改 a 的值</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">nt getFileLen(int b)&#123;</span><br><span class="line">	b = 40;// 传递的是值，不是指针或引用</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>二级指针<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">char *p1 = NULL;</span><br><span class="line">char **p2 = NULL;</span><br><span class="line">p1 = 0x11;</span><br><span class="line">p2 = 0x22;</span><br><span class="line">p1 = 0x111;</span><br><span class="line">p2 = &amp;p1;</span><br><span class="line">*p2 = 100;//间接赋值 p2 是 p1 的地址</span><br><span class="line"></span><br><span class="line">void getMem(char **p)&#123;</span><br><span class="line">	*p = 400;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int getMem3(char **myp1, int *mylen1, char **myp2, int *mylen2)&#123;</span><br><span class="line">	int ret = 0;</span><br><span class="line">	char *tmp1, *tmp2;</span><br><span class="line">	tmp1 = (char *)malloc(100);</span><br><span class="line">	strcpy(tmp1,&quot;212234&quot;);</span><br><span class="line">	//间接赋值</span><br><span class="line">	*mylen1 = strlen(tem1);</span><br><span class="line">	*myp1 = tmp1;</span><br><span class="line">	</span><br><span class="line">	tmp2 = (char *)malloc(100);</span><br><span class="line">	strcpy(tmp2,&quot;sdfb&quot;);</span><br><span class="line">	*mylen2 = strlen(tmp2);//一级指针</span><br><span class="line">	*tmp2 = tmp2;//二级指针的间接赋值</span><br><span class="line">	</span><br><span class="line">	return ret;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/04/22/day02/" data-id="cjcowu29x000af0onna1bnkbm" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c-c/">c/c++</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/05/07/day03/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          c自学Day03
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/04/19/泛型相关/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">泛型相关</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Catégories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Mot-clés</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AS快捷键/">AS快捷键</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kotlin/">Kotlin</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c-c/">c/c++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/免费博客-hexo/">免费博客 hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/泛型/">泛型</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/AS快捷键/" style="font-size: 10px;">AS快捷键</a> <a href="/tags/Android/" style="font-size: 15px;">Android</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Kotlin/" style="font-size: 10px;">Kotlin</a> <a href="/tags/c-c/" style="font-size: 20px;">c/c++</a> <a href="/tags/免费博客-hexo/" style="font-size: 10px;">免费博客 hexo</a> <a href="/tags/泛型/" style="font-size: 10px;">泛型</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/01/21/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/02/Kotlin-third/">Kotlin_third</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/25/Kotlin-two/">Kotlin_two</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/25/ScrollViewListViewClash/">ScrollViewListViewClash</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/11/kotlin_one/">kotlin one</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Propulsé par <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
